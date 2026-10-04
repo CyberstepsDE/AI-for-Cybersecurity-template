@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "deny": [
+      "mcp__kali__execute_command"
+    ],
+    "ask": [
+      "mcp__kali"
+    ]
+  }
+}

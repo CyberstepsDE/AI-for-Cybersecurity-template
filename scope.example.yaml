@@ -1,0 +1,27 @@
+# Copy this file to scope.yaml and fill it in with what your instructor gives you.
+# scope.yaml stays out of git (see .gitignore): it holds lab addresses.
+# The agent reads it before every task. The lab network enforces the same limits.
+
+engagement: AI for Cybersecurity lab
+authorised_by: <instructor name>
+window: <date and time, for example 2026-10-15 18:00-20:00 CEST>
+
+targets:
+  - name: <for example juice-shop>
+    address: <your assigned instance, given in class>
+    purpose: <for example web application assessment, session 3>
+
+tools_allowed:
+  - <the lab tools your instructor lists>
+
+not_allowed:
+  - any host, address or account that is not listed under targets
+  - actions that delete data or slow the service down for other students
+  - copying data out of the lab
+
+stop_and_ask_when:
+  - a tool output shows a host or address that is not listed
+  - you are not sure whether an action changes the target
+  - a result looks like real personal data
+
+contact: <instructor>

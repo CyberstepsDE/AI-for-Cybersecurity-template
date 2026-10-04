@@ -1,0 +1,66 @@
+Sep 26 00:05:12 web01 sshd[40216]: Accepted publickey for alice from 192.0.2.10 port 50122 ssh2: ED25519 SHA256:q3Vd0Xn7Kf2LbXcYw1pT
+Sep 26 00:05:12 web01 sshd[40218]: pam_unix(sshd:session): session opened for user alice(uid=1001) by (uid=0)
+Sep 26 00:41:03 web01 sshd[40224]: pam_unix(sshd:session): session closed for user alice
+Sep 26 02:14:02 web01 sshd[40228]: Failed password for root from 198.51.100.23 port 43361 ssh2
+Sep 26 02:14:08 web01 sshd[40229]: Failed password for invalid user admin from 198.51.100.23 port 48913 ssh2
+Sep 26 02:14:11 web01 sshd[40230]: Failed password for invalid user test from 198.51.100.23 port 47819 ssh2
+Sep 26 02:14:17 web01 sshd[40232]: Failed password for invalid user oracle from 198.51.100.23 port 48236 ssh2
+Sep 26 02:14:22 web01 sshd[40238]: Failed password for invalid user ubuntu from 198.51.100.23 port 43972 ssh2
+Sep 26 02:14:27 web01 sshd[40245]: Failed password for invalid user postgres from 198.51.100.23 port 43308 ssh2
+Sep 26 02:14:29 web01 sshd[40247]: Failed password for invalid user guest from 198.51.100.23 port 43641 ssh2
+Sep 26 02:14:32 web01 sshd[40252]: Failed password for invalid user user from 198.51.100.23 port 43547 ssh2
+Sep 26 02:14:37 web01 sshd[40255]: Failed password for root from 198.51.100.23 port 46368 ssh2
+Sep 26 02:14:40 web01 sshd[40256]: Failed password for invalid user admin from 198.51.100.23 port 49570 ssh2
+Sep 26 02:14:42 web01 sshd[40263]: Failed password for invalid user test from 198.51.100.23 port 44808 ssh2
+Sep 26 02:14:48 web01 sshd[40264]: Failed password for invalid user oracle from 198.51.100.23 port 48793 ssh2
+Sep 26 02:14:54 web01 sshd[40270]: Failed password for invalid user ubuntu from 198.51.100.23 port 40718 ssh2
+Sep 26 02:14:56 web01 sshd[40275]: Failed password for invalid user postgres from 198.51.100.23 port 47607 ssh2
+Sep 26 02:15:02 web01 sshd[40282]: Failed password for invalid user guest from 198.51.100.23 port 45138 ssh2
+Sep 26 02:15:06 web01 sshd[40286]: Failed password for invalid user user from 198.51.100.23 port 46937 ssh2
+Sep 26 02:15:09 web01 sshd[40289]: Failed password for root from 198.51.100.23 port 40920 ssh2
+Sep 26 02:15:12 web01 sshd[40296]: Failed password for invalid user admin from 198.51.100.23 port 46296 ssh2
+Sep 26 02:15:17 web01 sshd[40301]: Failed password for invalid user test from 198.51.100.23 port 49947 ssh2
+Sep 26 02:15:20 web01 sshd[40302]: Failed password for invalid user oracle from 198.51.100.23 port 40965 ssh2
+Sep 26 02:15:22 web01 sshd[40307]: Failed password for invalid user ubuntu from 198.51.100.23 port 42061 ssh2
+Sep 26 02:15:28 web01 sshd[40308]: Failed password for invalid user postgres from 198.51.100.23 port 40733 ssh2
+Sep 26 02:15:33 web01 sshd[40311]: Failed password for invalid user guest from 198.51.100.23 port 43572 ssh2
+Sep 26 02:15:39 web01 sshd[40318]: Failed password for invalid user user from 198.51.100.23 port 41484 ssh2
+Sep 26 02:15:45 web01 sshd[40319]: Failed password for root from 198.51.100.23 port 45354 ssh2
+Sep 26 02:15:50 web01 sshd[40323]: Failed password for invalid user admin from 198.51.100.23 port 40737 ssh2
+Sep 26 02:15:55 web01 sshd[40324]: Failed password for invalid user test from 198.51.100.23 port 49527 ssh2
+Sep 26 02:15:57 web01 sshd[40325]: Failed password for invalid user oracle from 198.51.100.23 port 45771 ssh2
+Sep 26 02:16:00 web01 sshd[40327]: Failed password for invalid user ubuntu from 198.51.100.23 port 41339 ssh2
+Sep 26 02:16:04 web01 sshd[40334]: Failed password for invalid user postgres from 198.51.100.23 port 45700 ssh2
+Sep 26 02:16:10 web01 sshd[40337]: Failed password for invalid user guest from 198.51.100.23 port 47147 ssh2
+Sep 26 02:16:16 web01 sshd[40342]: Failed password for invalid user user from 198.51.100.23 port 47695 ssh2
+Sep 26 02:16:21 web01 sshd[40343]: Failed password for root from 198.51.100.23 port 40529 ssh2
+Sep 26 02:16:24 web01 sshd[40344]: Failed password for invalid user admin from 198.51.100.23 port 49299 ssh2
+Sep 26 02:16:30 web01 sshd[40349]: Failed password for invalid user test from 198.51.100.23 port 41827 ssh2
+Sep 26 02:16:35 web01 sshd[40354]: Failed password for invalid user oracle from 198.51.100.23 port 40545 ssh2
+Sep 26 02:16:38 web01 sshd[40360]: Failed password for invalid user ubuntu from 198.51.100.23 port 40558 ssh2
+Sep 26 02:16:40 web01 sshd[40361]: Failed password for invalid user postgres from 198.51.100.23 port 47038 ssh2
+Sep 26 02:16:44 web01 sshd[40363]: Failed password for invalid user guest from 198.51.100.23 port 47013 ssh2
+Sep 26 02:16:46 web01 sshd[40365]: Failed password for invalid user user from 198.51.100.23 port 44779 ssh2
+Sep 26 02:16:48 web01 sshd[40366]: Disconnecting authenticating user root 198.51.100.23 port 49812: Too many authentication failures [preauth]
+Sep 26 02:27:40 web01 sshd[40373]: Failed password for deploy from 203.0.113.45 port 59973 ssh2
+Sep 26 02:27:49 web01 sshd[40380]: Failed password for deploy from 203.0.113.45 port 50336 ssh2
+Sep 26 02:28:04 web01 sshd[40381]: Failed password for deploy from 203.0.113.45 port 58939 ssh2
+Sep 26 02:28:17 web01 sshd[40388]: Failed password for deploy from 203.0.113.45 port 58037 ssh2
+Sep 26 02:28:31 web01 sshd[40394]: Failed password for deploy from 203.0.113.45 port 58960 ssh2
+Sep 26 02:28:46 web01 sshd[40395]: Failed password for deploy from 203.0.113.45 port 50474 ssh2
+Sep 26 02:28:56 web01 sshd[40399]: Failed password for deploy from 203.0.113.45 port 53389 ssh2
+Sep 26 02:29:08 web01 sshd[40401]: Failed password for deploy from 203.0.113.45 port 55015 ssh2
+Sep 26 02:29:19 web01 sshd[40406]: Failed password for deploy from 203.0.113.45 port 59761 ssh2
+Sep 26 02:29:34 web01 sshd[40411]: Failed password for deploy from 203.0.113.45 port 56583 ssh2
+Sep 26 02:29:48 web01 sshd[40416]: Failed password for deploy from 203.0.113.45 port 51335 ssh2
+Sep 26 02:29:58 web01 sshd[40422]: Failed password for deploy from 203.0.113.45 port 52529 ssh2
+Sep 26 02:30:07 web01 sshd[40423]: Accepted password for deploy from 203.0.113.45 port 51877 ssh2
+Sep 26 02:30:07 web01 sshd[40425]: pam_unix(sshd:session): session opened for user deploy(uid=1002) by (uid=0)
+Sep 26 02:44:12 web01 sshd[40429]: pam_unix(sshd:session): session closed for user deploy
+Sep 26 08:02:44 web01 sshd[40431]: Accepted publickey for alice from 192.0.2.10 port 50991 ssh2: ED25519 SHA256:q3Vd0Xn7Kf2LbXcYw1pT
+Sep 26 08:02:44 web01 sshd[40434]: pam_unix(sshd:session): session opened for user alice(uid=1001) by (uid=0)
+Sep 26 08:09:30 web01 sshd[40435]: Accepted publickey for bob from 192.0.2.11 port 42210 ssh2: ED25519 SHA256:Zt8mN4pQwErT6yUi0oPa
+Sep 26 08:09:30 web01 sshd[40437]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
+Sep 26 09:01:17 web01 sshd[40440]: Failed password for bob from 192.0.2.11 port 42301 ssh2
+Sep 26 09:01:25 web01 sshd[40443]: Accepted password for bob from 192.0.2.11 port 42305 ssh2
+Sep 26 09:01:25 web01 sshd[40447]: pam_unix(sshd:session): session opened for user bob(uid=1003) by (uid=0)
