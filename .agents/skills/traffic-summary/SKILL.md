@@ -17,8 +17,9 @@ opened on a student laptop: the instructor prepares summaries on an isolated mac
 
 1. **Read the columns** and say what one row means. Count rows, list the time range,
    the internal and external addresses. Every count, sum and interval comes from a
-   command you ran (for example a short Python script with the `csv` module), never
-   from reading the file by eye: a model reading 100 rows miscounts.
+   command you ran (for example a short Python script with the `csv` module, or
+   `Import-Csv` in PowerShell on Windows), never from reading the file by eye: a model
+   reading 100 rows miscounts.
 2. **Answer the standard questions,** each with the rows that support it, cited by
    line number in the file:
    - Who talks the most, and to whom?

@@ -6,8 +6,8 @@
 
 ## 0. Every session
 
-Run `/start` first. It reads the scope, the last work log entry and the task, then
-waits. Run `/save` when you finish, so the next session, which remembers nothing, can
+Run `/lab-start` first. It reads the scope, the last work log entry and the task, then
+waits. Run `/lab-save` when you finish, so the next session, which remembers nothing, can
 continue.
 
 ## 1. Three gates, in this order
@@ -63,12 +63,12 @@ application. Which skill fits which task:
 | Read a log file and decide what happened | `/triage-log` | 2, 4 |
 | Answer questions from a prepared network traffic summary | `/traffic-summary` | 4 |
 | Test a threat-hunting hypothesis | `/hunt` | 4 |
-| Assess the lab's training web application | `/assess-webapp` | 3 |
+| Assess the lab's training web application (with Hermes: Claude Code moves penetration-testing requests to an older model) | `/assess-webapp` | 3 |
 | Map policies to a framework such as NIS2, quote by quote | `/gap-analysis` | 5 |
 | Review Terraform files and compare with a scanner | `/iac-review` | 5 |
 | Check every finding against its evidence | `/review-findings` | any |
 | Write the report or incident note | `/report` | any |
-| Leave a note for the next session and commit | `/save` | any |
+| Leave a note for the next session and commit | `/lab-save` | any |
 
 `samples/` holds synthetic practice data. `evidence/` is where tool outputs, queries and
 working notes go; `reports/` holds finished reports. `templates/` holds the report

@@ -1,6 +1,7 @@
 # Copy this file to scope.yaml and fill it in with what your instructor gives you.
 # scope.yaml stays out of git (see .gitignore): it holds lab addresses.
-# The agent reads it before every task. The lab network enforces the same limits.
+# The agent reads it before every task. The lab network limits which hosts the tools can
+# reach; the window, the tool list and everything else hold because you and the agent keep them.
 
 engagement: AI for Cybersecurity lab
 authorised_by: <instructor name>

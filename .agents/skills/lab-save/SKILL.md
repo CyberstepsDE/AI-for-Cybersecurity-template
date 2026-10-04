@@ -1,9 +1,9 @@
 ---
-name: save
+name: lab-save
 description: Write down what happened in this session so the next one, which will remember nothing, can continue. Run after finishing a piece of work, before ending a session, or when the conversation is getting long.
 ---
 
-# /save - leave a note for the next session
+# /lab-save - leave a note for the next session
 
 Your memory ends when this conversation ends. The next session starts from zero and
 reads files. **A note in a file survives. A note in the conversation does not.**
@@ -45,8 +45,10 @@ The third line is the one people skip and the one that matters most.
 git diff --cached
 ```
 
-Read it. No key, token, password, lab address list or session cookie may be in it
-(`rules/data-handling.md`). Then stage the files by name and commit:
+Read it. No key, token, password or session cookie may be in it
+(`rules/data-handling.md`). Lab addresses in saved tool output are allowed while your
+copy is private; they must come out before you ever make it public. Then stage the
+files by name and commit:
 
 ```
 git add WORK_LOG.md evidence/<the new files>
@@ -63,4 +65,4 @@ Never `git add -A`: it sweeps up files you did not mean to commit.
 
 ## Related
 
-`/start` reads what this writes.
+`/lab-start` reads what this writes.

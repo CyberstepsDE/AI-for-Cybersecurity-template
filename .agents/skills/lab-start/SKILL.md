@@ -1,9 +1,9 @@
 ---
-name: start
+name: lab-start
 description: Load this lab's context at the start of a session, then say what you understand and wait. Run this FIRST in every new conversation, before acting.
 ---
 
-# /start - load the lab before you touch it
+# /lab-start - load the lab before you touch it
 
 A new conversation remembers nothing. This loads enough to act safely, and no more.
 Budget: a few minutes and a few thousand words. If you are reading the whole folder,
@@ -43,4 +43,4 @@ the next step is. Then wait. Do not start the work.
 
 ## Related
 
-`/save` when you finish. Load the matching skill when you begin the task.
+`/lab-save` when you finish. Load the matching skill when you begin the task.

@@ -23,7 +23,7 @@ acts on it. The record is how a reader tells the two apart.
 | What was observed | 40 failed SSH logins, five each for eight account names, from 198.51.100.23 between 02:14:02 and 02:16:46, then a disconnect for too many failures |
 | Record | `samples/auth.log`, lines 4-44 |
 | What it may mean | an automated password-guessing attempt |
-| Other explanations | a misconfigured internal script (ruled out: the address is external) |
+| Other explanations | a misconfigured script of our own (less likely: the address is not one of ours, and it tries eight generic account names, not one real one) |
 | Confidence | high, medium or low, and why |
 
 ## Facts about the outside world

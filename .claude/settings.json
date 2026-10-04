@@ -1,10 +1,12 @@
 {
   "permissions": {
+    "defaultMode": "default",
     "deny": [
-      "mcp__kali__execute_command"
+      "mcp__*__execute_command"
     ],
     "ask": [
-      "mcp__kali"
+      "mcp__kali",
+      "Bash(ssh *)"
     ]
   }
 }
