@@ -6,7 +6,8 @@
     ],
     "ask": [
       "mcp__kali",
-      "Bash(ssh *)"
+      "Bash(ssh *)",
+      "PowerShell(ssh *)"
     ]
   }
 }

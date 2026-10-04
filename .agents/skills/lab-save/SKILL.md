@@ -39,19 +39,21 @@ Append at the top, newest first.
 
 The third line is the one people skip and the one that matters most.
 
-## Step 3 - check for secrets, then commit
+## Step 3 - stage, check for secrets, then commit
 
-```
-git diff --cached
-```
-
-Read it. No key, token, password or session cookie may be in it
-(`rules/data-handling.md`). Lab addresses in saved tool output are allowed while your
-copy is private; they must come out before you ever make it public. Then stage the
-files by name and commit:
+Stage the files by name, then read exactly what will be committed:
 
 ```
 git add WORK_LOG.md evidence/<the new files>
+git diff --cached
+```
+
+No key, token, password or session cookie may be in it (`rules/data-handling.md`). Lab
+addresses in saved tool output are allowed while your copy is private; they must come
+out before you ever make it public. If something must not go in, unstage that file with
+`git restore --staged <file>`. Then commit:
+
+```
 git commit -m "<what was done, in one line>"
 ```
 

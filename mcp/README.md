@@ -122,15 +122,16 @@ Name the server `kali`. This folder's `.claude/settings.json` then:
 - denies `execute_command` on any server, whatever its name;
 - makes Claude Code ask before every other `kali` tool, also after you answered "don't
   ask again", because an ask rule outranks an allow rule;
-- asks before every `ssh` command;
+- asks before every `ssh` command, in Bash and in PowerShell;
 - starts terminal sessions in Manual mode, where Claude Code asks before acting, instead
   of auto mode, where a classifier decides for you.
 
-Claude Code registers all 12 tools of the bridge; it cannot filter them like Hermes.
-Before you approve a call, find its target and options; if you cannot see them, deny
-it and ask the agent to state them. For the web application assessment in session 3
-use Hermes, because Claude Code moves penetration-testing requests to an older model.
-Check the server with `claude mcp get kali`.
+Claude Code registers the bridge's tools except the denied `execute_command`. Before you
+approve a call, find its target and options; if you cannot see them, deny it and ask the
+agent to state them. For the web application assessment in session 3 use Hermes: Claude
+Code moves penetration-testing requests from its newest models to older ones
+(https://code.claude.com/docs/en/model-config). Check the server with
+`claude mcp get kali`.
 
 ## First call
 

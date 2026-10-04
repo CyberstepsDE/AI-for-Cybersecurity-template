@@ -66,7 +66,8 @@ change a skill, edit the file in `.agents/skills/`.
   git config --global user.email "you@example.com"
   ```
 - **A GitHub account**, for your own private copy. The first clone of a private
-  repository asks you to sign in.
+  repository asks you to sign in. If git asks for a password, enter a GitHub personal
+  access token instead: GitHub no longer accepts passwords for git.
 - **No git?** Download the folder as a ZIP from the template page ("Code", "Download
   ZIP") and unpack it. Everything works except the commit in `/lab-save`, which then
   only writes `WORK_LOG.md`.
@@ -102,7 +103,7 @@ have teeth:
 | Tools reach only your own training target | The lab network on the instructor's server | **Enforced once the lab server exists** (built before session 3, not yet piloted). Your own laptop's commands are not covered. |
 | Your SSH key starts only the Kali bridge | A restriction on the key, on the lab server | **Enforced once piloted.** Until then the agent's terminal can use the key for anything (`mcp/README.md`). |
 | A person approves every Kali tool call | Hermes: `trust: untrusted` in your `config.yaml`. Claude Code: `.claude/settings.json` | **Asks,** if configured as in `mcp/README.md`; the first call proves it. Hermes's prompt does not show the target, so turn on the full display. |
-| A person approves risky commands | Hermes: `approvals.mode manual` (session 2). Claude Code: `.claude/settings.json` starts it in Manual mode | **Partly.** Hermes checks commands against a list of dangerous patterns, not every command. Claude Code in Manual mode asks before shell commands except a built-in set of read-only ones. |
+| A person approves risky commands | Hermes: `approvals.mode manual` (session 2). Claude Code: `.claude/settings.json` starts terminal sessions in Manual mode | **Partly.** Hermes checks commands against a list of dangerous patterns, not every command. Claude Code in Manual mode asks before shell commands except a built-in set of read-only ones. |
 | `scope.yaml` and `.env` stay out of git | `.gitignore` | **Enforced** for those names only. Anything you paste into a note is not covered. |
 | Everything else in `AGENTS.md` and `rules/` | The agent reading it | **Agreed, not enforced.** It holds as well as the model follows it, which is why a person reads every finding. |
 
