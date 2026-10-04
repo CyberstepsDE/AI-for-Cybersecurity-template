@@ -74,8 +74,9 @@ change a skill, edit the file in `.agents/skills/`.
 
 ## How to use it, step by step
 
-1. **Make your own copy** from the link your instructor gives you: "Use this template",
-   then "Create a new repository". Make it private: it will hold your lab notes.
+1. **Make your own copy** from https://github.com/CyberstepsDE/AI-for-Cybersecurity-template:
+   press "Use this template", then "Create a new repository". Make it private: it will
+   hold your lab notes.
 2. **Clone your copy** (`git clone <its address>`) and open a terminal in its folder.
 3. **Start your agent in the folder.**
    - Hermes Agent: run `hermes`. The first time, it reports project skills that are "not
