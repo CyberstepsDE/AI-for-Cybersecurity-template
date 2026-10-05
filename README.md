@@ -31,6 +31,8 @@ it acts. Every finding ends with the record that proves it.
 ├── .claude/skills/            - the skills Claude Code runs, such as /lab-start
 ├── .agents/skills/            - the same skills, for any other agent that reads them
 ├── .claude/settings.json      - Claude Code: Manual mode and approval rules for Kali
+├── openrouter.example.json    - copy to openrouter.json, add your key: claude --settings openrouter.json
+├── ollama.json                - run a local model: claude --settings ollama.json
 ├── mcp/README.md              - how the agent reaches the lab's Kali tools (session 3)
 ├── samples/                   - synthetic practice data
 ├── templates/                 - report formats
@@ -82,8 +84,17 @@ instructor gives it as a ZIP; unpack it into `samples/` and commit it with `/lab
    press "Use this template", then "Create a new repository". Make it private: it will
    hold your lab notes.
 2. **Clone your copy** (`git clone <its address>`) and open a terminal in its folder.
-3. **Start Claude Code in the folder:** run `claude` and accept the folder when it asks
-   whether you trust it. Read `AGENTS.md` and the skills yourself before you rely on them.
+3. **Always start Claude Code in this folder,** so it gets the course rules, skills and
+   settings. The folder stays the same; only how you start it picks the model provider:
+   - `claude` uses your own Claude account.
+   - `claude --settings openrouter.json` uses OpenRouter. First copy
+     `openrouter.example.json` to `openrouter.json` and paste your key; `openrouter.json`
+     stays out of git.
+   - `claude --settings ollama.json` uses a model on your own laptop (needs Ollama and a
+     pulled model).
+
+   Accept the folder when it asks whether you trust it. Read `AGENTS.md` and the skills
+   yourself before you rely on them.
 4. **Type `/lab-start`.** The agent reads the rules, the scope and the last work log entry,
    then tells you what it understood and waits.
 5. **When your instructor gives you lab targets,** copy `scope.example.yaml` to

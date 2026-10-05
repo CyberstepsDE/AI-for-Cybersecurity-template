@@ -2,4 +2,5 @@
 .env.*
 scope.yaml
 .claude/settings.local.json
+openrouter.json
 .DS_Store

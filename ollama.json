@@ -1,0 +1,8 @@
+{
+  "_comment": "Start the local model (Ollama) with: claude --settings ollama.json. Needs Ollama running and the model pulled, for example: ollama pull qwen3.5:4b. No key: Ollama does not check one.",
+  "env": {
+    "ANTHROPIC_BASE_URL": "http://localhost:11434",
+    "ANTHROPIC_AUTH_TOKEN": "ollama",
+    "ANTHROPIC_API_KEY": ""
+  }
+}

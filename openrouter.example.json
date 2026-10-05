@@ -1,0 +1,9 @@
+{
+  "_comment": "Copy this file to openrouter.json and paste your own OpenRouter key. openrouter.json stays out of git (.gitignore), so your key is never committed. Then start the agent with: claude --settings openrouter.json",
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://openrouter.ai/api",
+    "ANTHROPIC_AUTH_TOKEN": "sk-or-...REPLACE_ME",
+    "ANTHROPIC_API_KEY": "",
+    "CLAUDE_CODE_ENABLE_GATEWAY_MODEL_DISCOVERY": "1"
+  }
+}
