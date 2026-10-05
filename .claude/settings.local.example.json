@@ -1,0 +1,6 @@
+{
+  "_comment": "Copy this file to .claude/settings.local.json and paste your own OpenRouter key. settings.local.json stays out of git (.gitignore), so your key is never committed. The course folder already points at OpenRouter in .claude/settings.json; this file adds only your key.",
+  "env": {
+    "ANTHROPIC_AUTH_TOKEN": "sk-or-...REPLACE_ME"
+  }
+}
