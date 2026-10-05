@@ -1,7 +1,7 @@
 # CLAUDE.md
 
 > This file is a stub. All agent instructions live in `AGENTS.md`, which Claude Code
-> loads through the import below. Hermes Agent reads `AGENTS.md` directly. One set of
-> instructions, both agents.
+> loads through the import below. Another agent that reads `AGENTS.md` directly gets the
+> same rules. One set of instructions.
 
 @AGENTS.md

@@ -5,5 +5,4 @@ description: Map an organisation's policy documents to the requirements of a fra
 
 # /gap-analysis
 
-The instructions for this skill live in `.agents/skills/gap-analysis/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/gap-analysis/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

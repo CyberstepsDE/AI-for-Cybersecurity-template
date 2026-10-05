@@ -23,7 +23,9 @@ you phrase the question and write the query. You judge the result.
    stop: a hunt in the wrong data proves nothing.
 4. **Query.** Read-only, shown to the person before it runs. Write it so it can be run
    again unchanged: exact field names, exact time range. In the lab SIEM your account is
-   read-only; on files, use read-only commands.
+   read-only; on files, use read-only commands. How the agent reaches the lab SIEM
+   (Wazuh), and where the read-only credentials live, comes in the session 4 handout;
+   keep those credentials out of files that get committed and out of the prompt.
 5. **Result.** The number of matching records and the first few, quoted with their
    identifiers or line numbers. Save the query and its raw output in `evidence/`.
 6. **Conclusion.** One of three:

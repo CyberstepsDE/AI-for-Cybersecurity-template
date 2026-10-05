@@ -4,7 +4,7 @@
 - **Tester:** <name>
 - **Authorised by and window:** <from scope.yaml>
 - **Target:** <exactly as listed in scope.yaml>
-- **Agent, model and tools used:** <for example Hermes with the lab's Kali tools over MCP>
+- **Agent, model and tools used:** <for example Claude Code with the lab's Kali tools over MCP>
 
 ## Verdict
 

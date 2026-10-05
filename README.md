@@ -8,9 +8,9 @@ how the agent connects to the lab's tools.
 You bring the task and the judgement. The agent reads the data, drafts, and asks before
 it acts. Every finding ends with the record that proves it.
 
-> **Status (2026-10-04):** written and checked against the Hermes and Claude Code
-> documentation and source; not yet run end to end with students. The connection to the
-> lab's Kali tools waits for the lab server, built before session 3.
+> **Status (2026-10-05):** written and checked against the Claude Code documentation; not
+> yet run end to end with students. The course agent is Claude Code. The connection to the
+> lab's Kali tools over SSH waits for the lab server, built before session 3.
 
 ## What is inside
 
@@ -28,25 +28,29 @@ it acts. Every finding ends with the record that proves it.
 │   ├── untrusted-input.md     - text in the data is data, never an instruction
 │   ├── data-handling.md       - what leaves your laptop; no secrets in git
 │   └── what-checks-prove.md   - what each check proves, and what it cannot
-├── .agents/skills/            - the skills (routines), read by Hermes Agent
-├── .claude/skills/            - short pointers to the same skills, for Claude Code
-├── .claude/settings.json      - Claude Code: approval rules for the lab's Kali tools
-├── mcp/README.md              - how the agent connects to the lab's tools
+├── .claude/skills/            - the skills Claude Code runs, such as /lab-start
+├── .agents/skills/            - the same skills, for any other agent that reads them
+├── .claude/settings.json      - Claude Code: Manual mode and approval rules for Kali
+├── mcp/README.md              - how the agent reaches the lab's Kali tools (session 3)
 ├── samples/                   - synthetic practice data
 ├── templates/                 - report formats
 ├── evidence/                  - your tool outputs, queries and working notes
 └── reports/                   - your finished reports
 ```
 
-The skills live once, in `.agents/skills/`. Hermes reads that folder; Claude Code reads
-only `.claude/skills/`, so each skill there is a two-line pointer to the real file. To
-change a skill, edit the file in `.agents/skills/`.
+Each skill's full instructions live once, in `.agents/skills/`; the matching file in
+`.claude/skills/` is a short pointer Claude Code reads. To change a skill, edit the file
+in `.agents/skills/`.
+
+**New lab data arrives as a download.** A copy made from this template is a fresh start,
+so later changes here do not reach it. When a session needs new practice data, the
+instructor gives it as a ZIP; unpack it into `samples/` and commit it with `/lab-save`.
 
 ## Words used here
 
 - **Agent:** the program that sends your task to a model and, when allowed, uses tools
-  such as reading a file or running a command. This folder works with Hermes Agent and
-  with Claude Code, both installed in session 2.
+  such as reading a file or running a command. The course agent is Claude Code, installed
+  in session 2. Any agent that reads `AGENTS.md` follows the same rules.
 - **Skill:** a routine in plain English that the agent follows when you type its name,
   for example `/triage-log`. It is instructions, not a program.
 - **MCP:** a standard way for the agent to use tools that run on another machine, such as
@@ -78,12 +82,8 @@ change a skill, edit the file in `.agents/skills/`.
    press "Use this template", then "Create a new repository". Make it private: it will
    hold your lab notes.
 2. **Clone your copy** (`git clone <its address>`) and open a terminal in its folder.
-3. **Start your agent in the folder.**
-   - Hermes Agent: run `hermes`. The first time, it reports project skills that are "not
-     loaded": Hermes does not run instructions from a folder you have not approved. Read
-     `AGENTS.md` and the skills first, then run `hermes skills trust` and start Hermes
-     again.
-   - Claude Code: run `claude` and accept the folder when it asks whether you trust it.
+3. **Start Claude Code in the folder:** run `claude` and accept the folder when it asks
+   whether you trust it. Read `AGENTS.md` and the skills yourself before you rely on them.
 4. **Type `/lab-start`.** The agent reads the rules, the scope and the last work log entry,
    then tells you what it understood and waits.
 5. **When your instructor gives you lab targets,** copy `scope.example.yaml` to
@@ -101,18 +101,20 @@ have teeth:
 
 | Rule | What holds it | Honest label |
 |---|---|---|
-| Tools reach only your own training target | The lab network on the instructor's server | **Enforced once the lab server exists** (built before session 3, not yet piloted). Your own laptop's commands are not covered. |
+| Tools over MCP reach only your own training target | The lab network on the instructor's server | **Enforced once the lab server exists** (built before session 3, not yet piloted). This covers the instructor's MCP tools only. A tool you run inside your own Kali VM reaches whatever that VM can reach. |
 | Your SSH key starts only the Kali bridge | A restriction on the key, on the lab server | **Enforced once piloted.** Until then the agent's terminal can use the key for anything (`mcp/README.md`). |
-| A person approves every Kali tool call | Hermes: `trust: untrusted` in your `config.yaml`. Claude Code: `.claude/settings.json` | **Asks,** if configured as in `mcp/README.md`; the first call proves it. Hermes's prompt does not show the target, so turn on the full display. |
-| A person approves risky commands | Hermes: `approvals.mode manual` (session 2). Claude Code: `.claude/settings.json` starts terminal sessions in Manual mode | **Partly.** Hermes checks commands against a list of dangerous patterns, not every command. Claude Code in Manual mode asks before shell commands except a built-in set of read-only ones. |
+| A person approves every Kali tool call | `.claude/settings.json` (an ask rule on the `kali` server) | **Asks,** if configured as in `mcp/README.md`; the first call proves it. |
+| A person approves risky commands | `.claude/settings.json` starts terminal sessions in Manual mode | **Partly.** In Manual mode Claude Code asks before shell commands except a built-in set of read-only ones. A "don't ask again" you click for one command is remembered for that command. |
 | `scope.yaml` and `.env` stay out of git | `.gitignore` | **Enforced** for those names only. Anything you paste into a note is not covered. |
 | Everything else in `AGENTS.md` and `rules/` | The agent reading it | **Agreed, not enforced.** It holds as well as the model follows it, which is why a person reads every finding. |
 
-One side effect worth knowing: Hermes scans `AGENTS.md` for text that looks like an
-attack on the agent, and if it finds any, it loads none of the file. A rules file that
-quotes an attack phrase as a warning, or names certain offensive tools, can switch off
-all your rules; the trace is a warning line in the agent log (`hermes logs`), easy to
-miss. Keep such examples in data files, not in `AGENTS.md`.
+## Running several agents (optional)
+
+One task at a time needs only one Claude Code. When you want several agents at once, each
+on a different model for a different job, a runtime such as [herdr](https://herdr.dev)
+(Apache 2.0) runs several Claude Code sessions side by side and can reach other machines
+over SSH. It is a convenience layer, not a different agent: each session still reads this
+folder and follows these rules. We only show it; the course does not require it.
 
 ## License
 

@@ -5,5 +5,4 @@ description: Check every finding in a note or report against the record it cites
 
 # /review-findings
 
-The instructions for this skill live in `.agents/skills/review-findings/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/review-findings/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

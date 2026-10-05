@@ -1,6 +1,7 @@
 # Agent instructions: AI for Cybersecurity lab
 
-> **Audience:** the AI agent working in this folder: Hermes Agent or Claude Code.
+> **Audience:** the AI agent working in this folder. The course uses Claude Code; the
+> rules are written so any agent that reads this file follows the same gates.
 > **Read this top to bottom before doing anything.** It is short on purpose. The detail
 > lives in `rules/`; load a rule when you are about to do the thing it governs.
 
@@ -60,10 +61,10 @@ application. Which skill fits which task:
 
 | Task | Skill | Typical session |
 |---|---|---|
-| Read a log file and decide what happened | `/triage-log` | 2, 4 |
+| Read a log file and decide what happened | `/triage-log` | 4 |
 | Answer questions from a prepared network traffic summary | `/traffic-summary` | 4 |
 | Test a threat-hunting hypothesis | `/hunt` | 4 |
-| Assess the lab's training web application (with Hermes: Claude Code moves penetration-testing requests to an older model) | `/assess-webapp` | 3 |
+| Assess the lab's training web application | `/assess-webapp` | 3 |
 | Map policies to a framework such as NIS2, quote by quote | `/gap-analysis` | 5 |
 | Review Terraform files and compare with a scanner | `/iac-review` | 5 |
 | Check every finding against its evidence | `/review-findings` | any |

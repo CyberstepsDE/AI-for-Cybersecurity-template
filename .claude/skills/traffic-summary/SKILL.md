@@ -5,5 +5,4 @@ description: Answer questions about network traffic from a prepared summary (a C
 
 # /traffic-summary
 
-The instructions for this skill live in `.agents/skills/traffic-summary/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/traffic-summary/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

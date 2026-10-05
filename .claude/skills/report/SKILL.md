@@ -5,5 +5,4 @@ description: Turn checked findings into a short report a busy reader can act on 
 
 # /report
 
-The instructions for this skill live in `.agents/skills/report/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/report/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

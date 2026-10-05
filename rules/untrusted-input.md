@@ -21,9 +21,10 @@ instructions hidden in content the agent read reached the attacker's goal in abo
 format (arXiv 2608.16393, August 2026). The defence is not a smarter model; it is
 treating every piece of read content as data and asking a person before any action.
 
-Your agent's own filters cover less than you might think. Hermes Agent, for example,
-marks results from web and MCP tools as untrusted, but a file it reads from your disk,
-such as a note copied from somebody's write-up, reaches the model unmarked.
+Your agent's own filters cover less than you might think. An agent may flag content it
+fetches from the web, yet a file it reads from your disk, such as a note copied from
+somebody's write-up, reaches the model as ordinary text. Treat every piece of read
+content as data yourself; do not rely on the tool to catch it.
 
 ## In practice
 

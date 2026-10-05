@@ -5,5 +5,4 @@ description: Run one threat-hunting cycle - hypothesis, data source, read-only q
 
 # /hunt
 
-The instructions for this skill live in `.agents/skills/hunt/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/hunt/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

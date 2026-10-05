@@ -5,5 +5,4 @@ description: Run an authorised assessment of the lab's training web application 
 
 # /assess-webapp
 
-The instructions for this skill live in `.agents/skills/assess-webapp/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/assess-webapp/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

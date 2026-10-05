@@ -2,7 +2,7 @@
 
 - **Date written:** <YYYY-MM-DD>
 - **Analyst:** <name>
-- **Agent and model used:** <for example Hermes, deepseek/deepseek-v4.1-flash>
+- **Agent and model used:** <for example Claude Code, model via OpenRouter>
 - **Data examined:** <file or index, time range it covers>
 
 ## Verdict

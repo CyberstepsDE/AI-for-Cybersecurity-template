@@ -5,5 +5,4 @@ description: Read a log file (for example an SSH auth.log or exported alerts), b
 
 # /triage-log
 
-The instructions for this skill live in `.agents/skills/triage-log/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/triage-log/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

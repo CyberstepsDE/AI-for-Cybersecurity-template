@@ -5,5 +5,4 @@ description: Write down what happened in this session so the next one, which wil
 
 # /lab-save
 
-The instructions for this skill live in `.agents/skills/lab-save/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/lab-save/SKILL.md`, the shared source copy. Read that file now and follow it exactly.

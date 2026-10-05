@@ -8,8 +8,13 @@
 
 MCP (Model Context Protocol) is a standard way for an agent to use tools that run
 somewhere else. A program called an MCP server offers a list of tools, each with a name
-and parameters; the agent sees the list and asks the server to run one. Hermes Agent and
-Claude Code both speak MCP.
+and parameters; the agent sees the list and asks the server to run one. Claude Code
+speaks MCP.
+
+Session 2 keeps Kali simple: you install Claude Code inside your own Kali virtual machine
+and it uses Kali's tools in the terminal, with you approving each command. This page is
+the next step, built for session 3: reaching the instructor's Kali tools from your laptop
+over SSH, with the allowed targets fixed by the lab network.
 
 ## How the Kali tools fit together
 
@@ -23,8 +28,8 @@ installs two programs:
 | `mcp-server` | The bridge: speaks MCP to your agent and forwards each call to that API | `--server http://localhost:5000` |
 
 ```
-your laptop                              lab Kali machine
-agent (Hermes or Claude Code)  --SSH-->  mcp-server  -->  kali-server-mcp (127.0.0.1:5000)  -->  tools
+your laptop                     lab Kali machine
+Claude Code  --SSH-->  mcp-server  -->  kali-server-mcp (127.0.0.1:5000)  -->  tools
 ```
 
 ## Read this before you connect
@@ -69,55 +74,16 @@ use".
 2. Connect once by hand (`ssh <user>@<lab-kali-host>`) and accept the host key after
    comparing its fingerprint with the one in the handout. Then log out.
 
-## Hermes Agent
+## Connect Claude Code (session 3)
 
-Add this to Hermes's `config.yaml` (Windows: `%LOCALAPPDATA%\hermes\config.yaml`, Mac:
-`~/.hermes/config.yaml`), with the values from the handout:
-
-```yaml
-mcp_servers:
-  kali:
-    command: "ssh"
-    args: ["-T", "<user>@<lab-kali-host>", "mcp-server", "--server", "http://127.0.0.1:5000"]
-    trust: untrusted
-    tools:
-      include: [server_health, nmap_scan]
-      resources: false
-      prompts: false
-```
-
-- `trust: untrusted` makes Hermes ask you before every call of a tool that the server
-  does not mark as read-only. The Kali bridge marks none, so every call asks. The default,
-  `full`, asks nothing.
-- `tools: include:` registers only the listed tools. Replace the example list with the
-  instructor's list for the session. Never include `execute_command`. The two `false`
-  lines also leave out the helper tools Hermes would otherwise add for the server's
-  resources and prompts.
-- Without the `trust` line, Hermes treats the server as fully trusted and asks nothing,
-  without any warning.
-
-Hermes's approval prompt names the tool and the server, but not the target or the
-options. Make the agent show them in the chat before every call:
-
-```
-hermes config set display.tool_progress verbose
-```
-
-Deny any Kali call whose target and options you have not seen.
-
-Check the connection with `hermes mcp test kali`.
-
-A note on words: `trust: untrusted` here means "ask before every call". Elsewhere
-(`rules/untrusted-input.md`) "untrusted" means "text that may try to steer the agent".
-Both apply to the Kali tools: you approve the call, and you treat its output as data.
-
-## Claude Code
+Run this in the course folder, with the values from the handout:
 
 ```
 claude mcp add --transport stdio kali -- ssh -T <user>@<lab-kali-host> mcp-server --server http://127.0.0.1:5000
 ```
 
-Name the server `kali`. This folder's `.claude/settings.json` then:
+Run it inside the course folder, so the server is added for this project. Name the server
+`kali`. This folder's `.claude/settings.json` then:
 
 - denies `execute_command` on any server, whatever its name;
 - makes Claude Code ask before every other `kali` tool, also after you answered "don't
@@ -126,12 +92,17 @@ Name the server `kali`. This folder's `.claude/settings.json` then:
 - starts terminal sessions in Manual mode, where Claude Code asks before acting, instead
   of auto mode, where a classifier decides for you.
 
-Claude Code registers the bridge's tools except the denied `execute_command`. Before you
-approve a call, find its target and options; if you cannot see them, deny it and ask the
-agent to state them. For the web application assessment in session 3 use Hermes: Claude
-Code moves penetration-testing requests from its newest models to older ones
-(https://code.claude.com/docs/en/model-config). Check the server with
+Claude Code registers every bridge tool except the denied `execute_command`. To show the
+model only the session's tools, deny the rest by name in `.claude/settings.json` (a deny
+on a tool name removes it from the model's view); the instructor's handout lists which
+tools the session uses. Before you approve a call, find its target and options; if you
+cannot see them, deny it and ask the agent to state them. Check the server with
 `claude mcp get kali`.
+
+A note on the model: for authorised penetration testing, Claude Code moves such requests
+from its newest models to older ones, and may decline some
+(https://code.claude.com/docs/en/model-config, checked 2026-10-05). The instructor
+confirms the model that completes `/assess-webapp` in the session 3 pilot.
 
 ## First call
 
@@ -139,16 +110,13 @@ Ask the agent to call `server_health` and nothing else. **It must ask for your a
 If it runs without asking, stop: the `trust` line or the server name is wrong. Read the
 answer yourself. Then follow `/assess-webapp`, which starts with `scope.yaml`.
 
-## Sources (checked 2026-10-04)
+## Sources (checked 2026-10-05)
 
 - Kali package page: https://www.kali.org/tools/mcp-kali-server/
 - Upstream repository: https://github.com/Wh0am123/MCP-Kali-Server (README, `server.py`,
   `client.py`)
-- Hermes MCP settings, `trust` and tool filters:
-  https://hermes-agent.nousresearch.com/docs/user-guide/features/mcp and
-  https://hermes-agent.nousresearch.com/docs/reference/mcp-config-reference
-- Hermes approval prompt and tool display: Hermes source, `tools/mcp_tool_handlers.py`
-  (commit af90026a); https://hermes-agent.nousresearch.com/docs/user-guide/configuration
-- Claude Code: https://code.claude.com/docs/en/mcp,
-  https://code.claude.com/docs/en/permissions and
+- Claude Code MCP, permissions and permission modes:
+  https://code.claude.com/docs/en/mcp, https://code.claude.com/docs/en/permissions and
   https://code.claude.com/docs/en/permission-modes
+- Claude Code model fallback for offensive-security requests:
+  https://code.claude.com/docs/en/model-config

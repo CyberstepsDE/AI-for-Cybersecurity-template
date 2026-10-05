@@ -5,5 +5,4 @@ description: Review infrastructure-as-code files (for example Terraform) for con
 
 # /iac-review
 
-The instructions for this skill live in `.agents/skills/iac-review/SKILL.md`, the copy
-that Hermes Agent also reads. Read that file now and follow it exactly.
+The instructions for this skill live in `.agents/skills/iac-review/SKILL.md`, the shared source copy. Read that file now and follow it exactly.
