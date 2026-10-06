@@ -8,9 +8,6 @@ how the agent connects to the lab's tools.
 You bring the task and the judgement. The agent reads the data, drafts, and asks before
 it acts. Every finding ends with the record that proves it.
 
-> **Status (2026-10-05):** written and checked against the Claude Code documentation; not
-> yet run end to end with students. The course agent is Claude Code. The connection to the
-> lab's Kali tools over SSH waits for the lab server, built before session 3.
 
 ## What is inside
 
