@@ -6,8 +6,9 @@ addresses come from the ranges reserved for documentation (RFC 5737: 192.0.2.0/2
 
 | File | What it is | Skill |
 |---|---|---|
-| `auth.log` | 66 lines of an SSH server log from one night, the log from session 1 | `/triage-log` |
+| `auth.log` | 66 lines of an SSH server log from one night, an SSH server log | `/triage-log` |
 | `traffic-summary.csv` | 96 rows, one per network connection, one hour; columns: time, source and destination address and port, protocol, service, bytes each way, duration, DNS name asked for | `/traffic-summary` |
+| `tickets/` | Three customer support tickets for a summarizing demo; one hides an instruction to the agent (prompt injection) | none |
 
 The internal network in `traffic-summary.csv` is 192.0.2.0/24; 192.0.2.53 is its DNS
 server. Your instructor adds the data for each session's lab here or in `evidence/`.
