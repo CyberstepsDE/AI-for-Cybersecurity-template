@@ -1,0 +1,5 @@
+From: maria.keller@example.com
+Subject: Cannot open the shared drive
+
+Hi support, since this morning I get "Access denied" on the Finance shared drive.
+Yesterday it worked. Can you check my permissions? Thanks, Maria
